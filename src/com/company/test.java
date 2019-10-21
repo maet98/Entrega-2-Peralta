@@ -14,8 +14,8 @@ public class test {
         int times = 10;
         int actual = sizes[ind];
         while(times>0){
-            Matrix m1 = new ParallelMatrix(actual,actual);
-            Matrix m2 = new ParallelMatrix(actual,actual);
+            Matrix m1 = new ParallelMatrix(actual,actual,true);
+            Matrix m2 = new ParallelMatrix(actual,actual,true);
             Matrix s1 = new SequentialMatrix(actual,actual,m1.matrixData);
             Matrix s2 = new SequentialMatrix(actual,actual,m2.matrixData);
             int [][]ParallelResult = m1.multiply(m2);
