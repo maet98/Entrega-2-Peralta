@@ -35,8 +35,8 @@ public class ParallelMatrix extends Matrix {
     }
 
     @Override
-    public int[][] multiply(Matrix secondMatrix) throws InterruptedException {
-        int result[][] = new int[this.rowDimension][this.columnDimension];
+    public double[][] multiply(Matrix secondMatrix) throws InterruptedException {
+        double result[][] = new double[this.rowDimension][this.columnDimension];
         if (!cell) {
             MultiplierThread[] threads = new MultiplierThread[this.rowDimension];
             for (int i = 0; i < this.rowDimension; i++) {

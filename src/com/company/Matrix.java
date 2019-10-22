@@ -5,8 +5,6 @@ package com.company;
 
 import java.util.Arrays;
 import java.util.Random;
-import java.util.Map;
-import java.util.HashMap;
 
 /**
  * @author Manuel
@@ -14,7 +12,7 @@ import java.util.HashMap;
  */
 public abstract class Matrix 
 {
-	protected int[][] matrixData;
+	protected double[][] matrixData;
 	protected int columnDimension;
 	protected int rowDimension;
 	protected Random rObject;
@@ -38,13 +36,13 @@ public abstract class Matrix
 		this.rowDimension = rDimension;
 		this.columnDimension = cDimension;
 		
-		matrixData = new int[this.rowDimension][this.columnDimension];
+		matrixData = new double[this.rowDimension][this.columnDimension];
 				
 		for(int i = 0; i < rowDimension; i++)
 		{
 			for(int j = 0; j < columnDimension; j++)
 			{
-				matrixData[i][j] = (int)(RANDOM_SCALE*Math.random());
+				matrixData[i][j] = (RANDOM_SCALE*Math.random());
 			
 			}//end-for(1)
 		
@@ -57,7 +55,7 @@ public abstract class Matrix
 	 * @param cDimension
 	 * @param mData
 	 */
-	public Matrix(int rDimension, int cDimension, int[][] mData)
+	public Matrix(int rDimension, int cDimension, double[][] mData)
 	{
 		this.rowDimension = rDimension;
 		this.columnDimension = cDimension;
@@ -71,7 +69,7 @@ public abstract class Matrix
 	 * @param columnPosition
 	 * @return
 	 */
-	public int getEntry(int rowPosition, int columnPosition)
+	public double getEntry(int rowPosition, int columnPosition)
 	{
 		return this.matrixData[rowPosition][columnPosition];
 	}
@@ -81,14 +79,14 @@ public abstract class Matrix
 	 * @param i
 	 * @return
 	 */
-	public int[] getRowVector(int i)
+	public double[] getRowVector(int i)
 	{
 		return this.matrixData[i].clone();
 	}
 	
-	public int[] getColumnVector(int i)
+	public double[] getColumnVector(int i)
 	{
-		int[] columnVector = new int[this.columnDimension];
+		double[] columnVector = new double[this.columnDimension];
 		
 		for(int k = 0; k < this.rowDimension; k++)
 			columnVector[k] = matrixData[k][i];
@@ -133,7 +131,7 @@ public abstract class Matrix
 	 * @param secondMatrix
 	 * @return
 	 */
-	public abstract int[][] multiply(Matrix secondMatrix) throws InterruptedException;
+	public abstract double[][] multiply(Matrix secondMatrix) throws InterruptedException;
 	
 
 }

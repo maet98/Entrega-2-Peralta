@@ -18,8 +18,8 @@ public class test {
             Matrix m2 = new ParallelMatrix(actual,actual,true);
             Matrix s1 = new SequentialMatrix(actual,actual,m1.matrixData);
             Matrix s2 = new SequentialMatrix(actual,actual,m2.matrixData);
-            int [][]ParallelResult = m1.multiply(m2);
-            int [][]SequentialResult = s1.multiply(s2);
+            var ParallelResult = m1.multiply(m2);
+            var SequentialResult = s1.multiply(s2);
             for(int i = 0;i< actual;i++){
                 for(int j = 0;j < actual;j++){
                     assert ParallelResult[i][j]==SequentialResult[i][j];

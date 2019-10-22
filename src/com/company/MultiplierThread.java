@@ -3,44 +3,43 @@ package com.company;
 public class MultiplierThread extends Thread
 {
 
-    private int[] rowVector;
-    private int[][] Matrix;
-    private int[] result;
+    private double[] rowVector;
+    private double[][] Matrix;
+    private double[] result;
 
     /**
      * Constructor parametrizado
-     *
-     * @param rowVector
+     *  @param rowVector
      * @param Matrix
      */
-    public MultiplierThread(int[] rowVector, int[][] Matrix)
+    public MultiplierThread(double[] rowVector, double[][] Matrix)
     {
         this.setRowVector(rowVector);
         this.setMatrix(Matrix);
-        this.result = new int[rowVector.length];
+        this.result = new double[rowVector.length];
     }
 
-    public int[] getRowVector() {
+    public double[] getRowVector() {
         return rowVector;
     }
 
-    public void setRowVector(int[] rowVector) {
+    public void setRowVector(double[] rowVector) {
         this.rowVector = rowVector;
     }
 
-    public int[][] getMatrix() {
+    public double[][] getMatrix() {
         return Matrix;
     }
 
-    public void setMatrix(int[][] Matrix) {
+    public void setMatrix(double[][] Matrix) {
         this.Matrix = Matrix;
     }
 
-    public int[] getResult() {
+    public double[] getResult() {
         return result;
     }
 
-    public void setResult(int result[]) {
+    public void setResult(double result[]) {
         this.result = result;
     }
 

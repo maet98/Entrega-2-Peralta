@@ -9,15 +9,15 @@ public class Main {
             t1 = t2 = 0;
             int times = 10;
             while(times>0){
-                Matrix m1 = new ParallelMatrix(actual,actual,true);
-                Matrix m2 = new ParallelMatrix(actual,actual,true);
+                Matrix m1 = new ParallelMatrix(actual,actual,false);
+                Matrix m2 = new ParallelMatrix(actual,actual,false);
                 Matrix s1 = new SequentialMatrix(actual,actual,m1.matrixData);
                 Matrix s2 = new SequentialMatrix(actual,actual,m2.matrixData);
                 long start = System.nanoTime();
-                int [][]result = m1.multiply(m2);
+                var result = m1.multiply(m2);
                 t1 += (double)(System.nanoTime()-start)/nanoseconds;
                 start = System.nanoTime();
-                int [][]r2 = s1.multiply(s2);
+                var r2 = s1.multiply(s2);
                 t2 += (double)(System.nanoTime()-start)/nanoseconds;
                 times--;
             }
